@@ -2,7 +2,7 @@
 
 动态规划思考方向：
 
-![「动态规划」问题思考方向.png](\pics\1f95da43d1bdeebdd1213bb804034ddc5f906dc61451cd63f2b5ab5d0eb33b33-「动态规划」问题思考方向.png)动态规划常常适用于**有重叠子问题**和**最优子结构**性质的问题，动态规划方法**所耗时间往往远少于朴素解法**。
+![「动态规划」问题思考方向.png](https://github.com/fxm2019/LeetCodeNote/tree/master/pics/1f95da43d1bdeebdd1213bb804034ddc5f906dc61451cd63f2b5ab5d0eb33b33-「动态规划」问题思考方向.png)动态规划常常适用于**有重叠子问题**和**最优子结构**性质的问题，动态规划方法**所耗时间往往远少于朴素解法**。
 
 ### 主要思想
 
@@ -200,7 +200,7 @@ dp[i]: 用数组dp 来存储前第 i 个数的最长子序列的长度, i 表p�
 
 前面遍历dp列表的时间复杂度肯定无法降低了，但是后面计算每个dp[i], 每轮遍历`[0,i]`的`dp[i]`元素的时间复杂度可以考虑设计状态定义，使得整个dp为一个排序列表，这样我们自然想到了可以利用二分法来把时间复杂度降到了$O(NlogN)$。这里由于篇幅原因，如果大家感兴趣的话详细的解题步骤可以看好心人写的[二分方法+动态规划详解](https://leetcode-cn.com/problems/longest-increasing-subsequence/solution/dong-tai-gui-hua-er-fen-cha-zhao-tan-xin-suan-fa-p/):
 
-![image.png](\pics\ee740d492676a26ff7017dd1635ff3af0361ee412f0e1c7bf2ffee032e3dfb4e-image.png)
+![image.png](https://github.com/fxm2019/LeetCodeNote/tree/master/pics/ee740d492676a26ff7017dd1635ff3af0361ee412f0e1c7bf2ffee032e3dfb4e-image.png)
 
 #### 方法二：修改状态定义（同时用到了**贪心算法、二分查找**）
 
@@ -447,11 +447,11 @@ _________
     奇数回文串的“中心”是一个具体的字符，例如：回文串 "aba" 的中心是字符 "b"；
     偶数回文串的“中心”是位于中间的两个字符的“空隙”，例如：回文串串 "abba" 的中心是两个 "b" 中间的那个“空隙”。
 
-![图 1 ：奇数回文串与偶数回文串](\pics\572db4731d6a0e32ee9c14773ed476068bebb88883335bc7415cb0b43762303a.jpg)
+![图 1 ：奇数回文串与偶数回文串](https://github.com/fxm2019/LeetCodeNote/tree/master/pics/572db4731d6a0e32ee9c14773ed476068bebb88883335bc7415cb0b43762303a.jpg)
 
 图 1 ：奇数回文串与偶数回文串
 
-![图 2：枚举可能的所有回文中心](\pics\3c4ca880f2dd7463e15ddf7bbd59e2f7d11434b7dbc69b55893660012726ee88.jpg)
+![图 2：枚举可能的所有回文中心](https://github.com/fxm2019/LeetCodeNote/tree/master/pics/3c4ca880f2dd7463e15ddf7bbd59e2f7d11434b7dbc69b55893660012726ee88.jpg)
 
 图 2：枚举可能的所有回文中心
 
@@ -547,7 +547,7 @@ _______
 
   但是问题来了，具体我们应该怎么求每个状态的值呢？这里介绍一种利用状态转移表法写出状态转移方程，我们通过把`dp[i][j]`的状态转移直接画成一张二维表格，我们所要做的也就是往这张表中填充所有的状态，进而得到我们想要的结果。如下图：
 
-![](\pics\76574ab7ff2877d63b80a2d4f8496fab3c441065552edc562f62d5809e75e97e-Snipaste_2019-05-29_15-28-02.png)
+![](https://github.com/fxm2019/LeetCodeNote/tree/master/pics/76574ab7ff2877d63b80a2d4f8496fab3c441065552edc562f62d5809e75e97e-Snipaste_2019-05-29_15-28-02.png)
 
 我们用字符串为"**cbbd**"作为输入来举例子，每次遍历就是求出右上角那些红色的值，通过上面的图我们会发现，按照一般的习惯都会先计算第一行的数值，但是当我们计算`dp[0,2]`的时候，我们会需要`dp[1,2]`，按照这个逻辑，我们就可以很容易发现遍历从下往上遍历会很方便计算。**一定要注意计算顺序，保证无后效性**。
 
@@ -640,7 +640,7 @@ rose -> ros (删除 'e')
 
 - **第三步：考虑初始化条件** 我们还是利用dp转移表法来找到状态转移的变化（读者可以自行画一张dp表，具体方法在求最长子序列中已经演示过了），这里我们用**空字符串**来额外加入到word1和word2中，这样的目的是方便记录每一步操作，例如如果其中一个是空字符串，那么另外一个字符至少的操作数都是1，就从1开始计数操作数，以后每一步都执行插入操作，也就是当`i=0`时，`dp[0][j]=j`,同理可得，如果另外一个是空字符串，则对当前字符串执行删除操作就可以了，也就是`dp[i][0]=i`，具体图示如下：
 
-  ![Snipaste_2019-05-29_15-28-02.png](\pics\76574ab7ff2877d63b80a2d4f8496fab3c441065552edc562f62d5809e75e97e-Snipaste_2019-05-29_15-28-02.png)
+  ![Snipaste_2019-05-29_15-28-02.png](https://github.com/fxm2019/LeetCodeNote/tree/master/pics/76574ab7ff2877d63b80a2d4f8496fab3c441065552edc562f62d5809e75e97e-Snipaste_2019-05-29_15-28-02.png)
 
   第一行，是 word1 为空变成 word2 最少步数，就是插入操作
 
