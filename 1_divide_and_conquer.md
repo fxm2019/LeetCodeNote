@@ -14,7 +14,7 @@ MapReduce（分治算法的应用） 是 Google 大数据处理的三驾马车�
 * 治：将这些规模更小的子问题**逐个击破**；
 * 合：将已解决的子问题**逐层合并**，最终得出原问题的解；
 
-![](\pics\20200408204450701.png)
+![](https://github.com/fxm2019/LeetCodeNote/blob/master/pics/20200408204450701.png)
 
 ### 分治法适用的情况
 
@@ -130,7 +130,7 @@ def divide_conquer(problem, paraml, param2,...):
 
 ### 哈希表法
 
-![image-20200818204007735](\pics\image-20200818204007735.png)
+![image-20200818204007735](https://github.com/fxm2019/LeetCodeNote/blob/master/pics/image-20200818204007735.png)
 
 ```python
 class Solution:
@@ -140,7 +140,7 @@ class Solution:
 
 ```
 
-![image-20200818204303116](\pics\image-20200818204303116.png)
+![image-20200818204303116](https://github.com/fxm2019/LeetCodeNote/blob/master/pics/image-20200818204303116.png)
 
 ### 排序
 
